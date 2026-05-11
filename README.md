@@ -20,7 +20,7 @@ Al completar este tutorial, comprenderás:
 ✅ Cómo generar componentes con Angular CLI  
 ✅ TypeScript: interfaces y tipos de datos  
 ✅ Integración de componentes en templates  
-✅ Buenas prácticas de versionado con Git  
+✅ Buenas prácticas de versionado con Git
 
 ---
 
@@ -57,6 +57,7 @@ ng generate component features/customer
 ```
 
 Esto creará automáticamente:
+
 - `src/app/features/customer/customer.ts` (componente)
 - `src/app/features/customer/customer.html` (template)
 - `src/app/features/customer/customer.css` (estilos)
@@ -114,9 +115,9 @@ import { Customer } from './features/customer/customer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Customer],  // ← Añade Customer al array imports
+  imports: [RouterOutlet, Customer], // ← Añade Customer al array imports
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {}
 ```
@@ -126,8 +127,7 @@ export class App {}
 En `src/app/app.html`, añade el componente:
 
 ```html
-<app-customer/>
-<router-outlet />
+<app-customer /> <router-outlet />
 ```
 
 ---
@@ -167,18 +167,23 @@ Los artefactos se guardarán en el directorio `dist/`.
 ## 📚 Conceptos Clave
 
 ### 1. **Componentes Angular**
+
 Los componentes son la unidad básica de Angular. Combinan lógica TypeScript, templates HTML y estilos CSS.
 
 ### 2. **Interfaces TypeScript**
+
 Las interfaces definen la estructura y tipos de los datos, proporcionando autocompletado y validación de tipos en tiempo de compilación.
 
 ### 3. **Datos Mock**
+
 En desarrollo, usamos datos falsos (mock) para probar la UI sin depender de un backend real.
 
 ### 4. **Árbol de Componentes**
+
 Los componentes se importan y se integran en otros componentes, creando una estructura jerárquica.
 
 ### 5. **Conventional Commits**
+
 Mensajes de commit estructurados (`feat:`, `fix:`, `docs:`, etc.) que facilitan la lectura del historial de cambios.
 
 ---
@@ -206,15 +211,18 @@ src/
 ## 🐛 Troubleshooting
 
 **Error: "Cannot find module"**
+
 - Asegúrate de tener todas las dependencias instaladas: `pnpm install`
 - Verifica las rutas de importación en los archivos TypeScript
 
 **El componente no aparece en la UI**
+
 - Comprueba que `Customer` está importado en `app.ts`
 - Verifica que está añadido en el array `imports` del decorador `@Component`
 - Asegúrate de que la etiqueta `<app-customer/>` está en `app.html`
 
 **Error de sintaxis TypeScript**
+
 - Revisa el archivo para asegurar la interfaz está correctamente definida
 - Ejecuta `ng lint` para verificar problemas de código
 
@@ -222,7 +230,7 @@ src/
 
 ## 🎓 Ejercicios Propuestos
 
-1. **Mostrar datos en la UI**: Usa `*ngFor` en el template para iterar sobre el array `customers`
+1. **Mostrar datos en la UI**: Usa `@for` en el template para iterar sobre el array `customers`
 2. **Filtrado**: Implementa un método para filtrar clientes por nivel de lealtad
 3. **Búsqueda**: Crea un input para buscar clientes por nombre
 4. **Componente hijo**: Crea un sub-componente `CustomerCard` para mostrar cada cliente individualmente
