@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ICustomer } from '../interfaces/customer.interface';
+import { CustomerItem } from '../customer-item/customer-item';
 
 @Component({
   selector: 'app-customer',
-  imports: [],
+  imports: [CustomerItem],
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
 
 export class Customer {
+  
   customers: ICustomer[] = [
     {
       fullName: 'Emma Johnson',
@@ -101,4 +103,14 @@ export class Customer {
       image: 'https://i.pravatar.cc/150?img=10',
     },
   ];
+
+  // customers = signal<ICustomer[]>(this.data);
+  handleDeletedUser(fullName:string){
+    console.log(fullName);
+    console.log(this.customers.findIndex(e=>e.fullName===fullName));
+    
+    
+    this.customers.splice(this.customers.findIndex(e=>e.fullName===fullName),1);
+  
+  }
 }
