@@ -1,16 +1,5 @@
 import { Component } from '@angular/core';
-
-
-export interface CustomerItem {
-  fullName: string;
-  email: string;
-  phone: string;
-  address: string;
-  loyalty: 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'VIP';
-  state: boolean;
-  image: string;
-}
-
+import { ICustomer } from '../interfaces/customer.interface';
 
 @Component({
   selector: 'app-customer',
@@ -20,7 +9,7 @@ export interface CustomerItem {
 })
 
 export class Customer {
-  customers: CustomerItem[] = [
+  customers: ICustomer[] = [
     {
       fullName: 'Emma Johnson',
       email: 'emma.johnson@example.com',
