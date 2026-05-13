@@ -1,4 +1,7 @@
-  <img
-    class="w-12 h-12 rounded-full object-cover object-center"
-   [src]="customer().image" alt="avatar of {{customer().fullName}}">  
+<div class="flex">
+  <img class="w-12 h-12 rounded-full object-cover object-center" [src]="customer().image"
+    alt="avatar of {{customer().fullName}}">
   <p>{{customer().fullName}}</p>
+
+  <app-button-trash/>
+</div>
