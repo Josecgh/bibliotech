@@ -8,7 +8,8 @@
   </li> -->
   <app-customer-item [customer]="customer" (userDeleted)="handleDeletedUser($event)">
     <app-button-trash [item]="customer.fullName" (eventEmitted)="handleDeletedUser($event)"/>
+    <app-button-edit/>
   </app-customer-item>
-  
+
 }
 </ul>

@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { ICustomer } from '../interfaces/customer.interface';
 import { CustomerItem } from '../customer-item/customer-item';
 import { ButtonTrash } from "../../shared/ui/button-trash/button-trash";
+import { ButtonEdit } from '../../shared/ui/button-edit/button-edit';
 
 @Component({
   selector: 'app-customer',
-  imports: [CustomerItem, ButtonTrash],
+  imports: [CustomerItem, ButtonTrash, ButtonEdit],
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
