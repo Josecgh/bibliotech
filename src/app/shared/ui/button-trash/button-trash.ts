@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-button-trash',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './button-trash.html',
   styleUrl: './button-trash.css',
 })
-export class ButtonTrash {}
+export class ButtonTrash {
+  item = input<string>("");
+  eventEmitted = output<string>();
+  emitEvent(){
+    this.eventEmitted.emit(this.item());
+  }
+}
