@@ -1,10 +1,14 @@
 import { Component, computed, signal } from '@angular/core';
 import { ICustomer } from '../interfaces/customer.interface';
 import { form, FormField } from '@angular/forms/signals';
+import { CustomerItem } from '../customer-item/customer-item';
+import { IconButton } from '../../shared/ui/icon-button/icon-button';
+import { Trash } from '../../shared/ui/icons/trash';
+import { Pen } from '../../shared/ui/icons/pen';
 
 @Component({
   selector: 'app-customer',
-  imports: [FormField],
+  imports: [FormField, CustomerItem, IconButton, Trash, Pen],
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
@@ -115,4 +119,21 @@ export class Customer {
         .includes(this.searchForm.text().value().trim().toLowerCase())
     )
   );
+
+  handleUserDeleted(fullName: string) {
+    const index = this.customersData.findIndex(
+      (e) => e.fullName === fullName
+    );
+    if (index !== -1) {
+      this.customersData.splice(index, 1);
+    }
+  }
+
+  handleUserEdited(fullName: string) {
+    console.log(fullName);
+  }
+
+  searchCustomer() {
+    // Implement search logic
+  }
 }
