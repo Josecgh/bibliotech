@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { ICustomer } from '../interfaces/customer.interface';
+import { form, FormField } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-customer',
-  imports: [],
+  imports: [FormField],
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
 
 export class Customer {
-  customers: ICustomer[] = [
+  searchModel = signal<{ text: string }>({
+    text: '',
+  });
+  searchForm = form(this.searchModel);
+
+  customersData: ICustomer[] = [
     {
       fullName: 'Emma Johnson',
       email: 'emma.johnson@example.com',
@@ -101,4 +107,12 @@ export class Customer {
       image: 'https://i.pravatar.cc/150?img=10',
     },
   ];
+
+  customers = computed(() =>
+    this.customersData.filter((e) =>
+      e.fullName
+        .toLowerCase()
+        .includes(this.searchForm.text().value().trim().toLowerCase())
+    )
+  );
 }
