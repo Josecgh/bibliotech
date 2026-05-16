@@ -1,26 +1,42 @@
-
 @let image = customer().image;
-@let name  = customer().fullName;
+@let name = customer().fullName;
+@let email = customer().email;
+@let state = customer().state;
+@let isActive = state === true;
 
-<div class="flex">
-  <img class="w-12 h-12 rounded-full object-cover object-center" 
-       [src]="image"
-       alt="avatar of {{name}}">
-  <p>{{name}}</p>
-  <!-- <button
-  class="rounded-md border border-transparent p-2.5 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer"
-  type="button"
-    [attr.data-id]="customer().fullName"
-    (click)="deleteUser()"
-    >
-    
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
-      viewBox="0 0 16 16">
-      <path
-        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-      <path
-      d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
-    </svg>
-  </button> -->
-  <ng-content/>
-</div>
+<td class="px-md py-md">
+  <div class="flex items-center gap-sm">
+    <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+      <img class="w-full h-full object-cover" [src]="image" alt="avatar of {{name}}">
+    </div>
+    <div>
+      <p class="font-title-md text-on-surface">{{name}}</p>
+      <span
+        class="text-xs font-bold text-tertiary bg-tertiary-fixed px-1.5 py-0.5 rounded-full uppercase tracking-tighter">Oro</span>
+    </div>
+  </div>
+</td>
+<td class="px-md py-md font-body-md text-secondary">
+  {{email}}
+
+</td>
+<td class="px-md py-md font-body-md text-on-surface font-semibold">
+  1.2400,00 €
+
+</td>
+<td class="px-md py-md font-body-md text-secondary">
+  12 Oct 2025
+
+</td>
+<td class="px-md py-md">
+  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+    [class.bg-secondary-container]="isActive" [class.text-on-secondary-container]="isActive"
+    [class.bg-surface-container-high]="!isActive" [class.text-on-surface-variant]="!isActive">{{ isActive ? 'Activo' :
+    'Inactivo' }}</span>
+
+</td>
+<td class="px-md py-md text-right">
+  <div class="flex justify-end gap-xs">
+    <ng-content></ng-content>
+  </div>
+</td>
