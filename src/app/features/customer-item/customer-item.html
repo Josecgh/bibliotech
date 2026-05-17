@@ -3,6 +3,7 @@
 @let email = customer().email;
 @let state = customer().state;
 @let isActive = state === true;
+@let loyalty = customer().loyalty;
 
 <td class="px-md py-md">
   <div class="flex items-center gap-sm">
@@ -11,8 +12,10 @@
     </div>
     <div>
       <p class="font-title-md text-on-surface">{{name}}</p>
-      <span
-        class="text-xs font-bold text-tertiary bg-tertiary-fixed px-1.5 py-0.5 rounded-full uppercase tracking-tighter">Oro</span>
+      <span [class]="getLoyaltyClasses(loyalty)"
+        class="text-xs font-bold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">
+        {{loyalty}}
+      </span>
     </div>
   </div>
 </td>

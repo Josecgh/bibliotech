@@ -3,7 +3,7 @@ import { ICustomer } from '../interfaces/customer.interface';
 import { ButtonTrash } from "../../shared/ui/button-trash/button-trash";
 
 @Component({
-  selector: 'app-customer-item',
+  selector: '[app-customer-item]',
   imports: [],
   templateUrl: './customer-item.html',
   styleUrl: './customer-item.css',
@@ -11,10 +11,16 @@ import { ButtonTrash } from "../../shared/ui/button-trash/button-trash";
 export class CustomerItem {
 
   readonly customer = input.required<ICustomer>();
-  userDeleted = output<string>();
 
-  deleteUser() {
-    this.userDeleted.emit(this.customer().fullName);
+  getLoyaltyClasses(loyalty: string): string {
+    const loyaltyColorMap = {
+      'Bronze': 'text-tertiary bg-tertiary-fixed',
+      'Silver': 'text-secondary bg-secondary-fixed',
+      'Gold': 'bg-yellow-300 text-yellow-900',
+      'Platinum': 'bg-gray-400 text-gray-900',
+      'VIP': 'bg-purple-500 text-white'
+    };
+    return loyaltyColorMap[loyalty as keyof typeof loyaltyColorMap] || '';
   }
 
 }
