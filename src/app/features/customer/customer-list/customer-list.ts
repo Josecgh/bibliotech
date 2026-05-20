@@ -5,9 +5,10 @@ import { IconButton } from '../../../shared/ui/icon-button/icon-button';
 import { customers } from '../../../data/customer-data';
 
 import { form, FormField } from '@angular/forms/signals';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-customer-list',
-  imports: [CustomerItem, IconButton, FormField],
+  imports: [CustomerItem, IconButton, FormField, RouterLink],
   templateUrl: './customer-list.html',
   styleUrl: './customer-list.css',
 })

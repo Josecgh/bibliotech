@@ -2,6 +2,7 @@ import { ICustomer } from "../features/interfaces/customer.interface";
 
 export const customers: ICustomer[] = [
     {
+      id: 1,
       fullName: 'Emma Johnson',
       email: 'emma.johnson@example.com',
       phone: '+1-555-0123',
@@ -11,6 +12,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=1',
     },
     {
+      id: 2,
       fullName: 'Liam Smith',
       email: 'liam.smith@example.com',
       phone: '+1-555-0456',
@@ -20,6 +22,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=2',
     },
     {
+      id: 3,
       fullName: 'Olivia Brown',
       email: 'olivia.brown@example.com',
       phone: '+1-555-0789',
@@ -29,6 +32,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=3',
     },
     {
+      id: 4,
       fullName: 'Noah Davis',
       email: 'noah.davis@example.com',
       phone: '+1-555-1011',
@@ -38,6 +42,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=4',
     },
     {
+      id: 5,
       fullName: 'Ava Martinez',
       email: 'ava.martinez@example.com',
       phone: '+1-555-1213',
@@ -47,6 +52,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=5',
     },
     {
+      id: 6,
       fullName: 'William Garcia',
       email: 'william.garcia@example.com',
       phone: '+1-555-1415',
@@ -56,6 +62,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=6',
     },
     {
+      id: 7,
       fullName: 'Sophia Rodriguez',
       email: 'sophia.rodriguez@example.com',
       phone: '+1-555-1617',
@@ -65,6 +72,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=7',
     },
     {
+      id: 8,
       fullName: 'James Wilson',
       email: 'james.wilson@example.com',
       phone: '+1-555-1819',
@@ -74,6 +82,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=8',
     },
     {
+      id: 9,
       fullName: 'Isabella Lee',
       email: 'isabella.lee@example.com',
       phone: '+1-555-2021',
@@ -83,6 +92,7 @@ export const customers: ICustomer[] = [
       image: 'https://i.pravatar.cc/150?img=9',
     },
     {
+      id: 10,
       fullName: 'Benjamin Harris',
       email: 'benjamin.harris@example.com',
       phone: '+1-555-2223',
